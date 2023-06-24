@@ -1,0 +1,173 @@
+:root {
+  /********** COLORS ***********/
+  --mainBackground: hsl(233, 47%, 7%);
+  --cardBackground: #1b1937;
+  --softViolet: #ab5cdb;
+  --white: #ffffff;
+
+  /********** FONT FAMILY **********/
+  --inter: "Inter", sans-serif;
+  --lexendDeca: "Lexend Deca", sans-serif;
+
+  /********** FONT WEIGHTS **********/
+  --fw400: 400;
+  --fw700: 700;
+}
+
+/********** GENERAL **********/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainBackground);
+}
+
+/********** CARD COMPONENT **********/
+.card-container {
+  background: var(--cardBackground);
+  box-shadow: 0px 20px 20px -10px rgba(23, 25, 41, 0.203087);
+  border-radius: 0.8rem;
+  max-width: 32.7rem;
+  overflow: hidden;
+}
+
+.main-img-container {
+  position: relative;
+}
+
+.header-img {
+  max-width: 100%;
+  display: block;
+}
+
+.violet-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(170, 92, 219, 0.9);
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+.text-container {
+  padding: 4rem 3.1rem 3.2rem;
+}
+
+.header-text {
+  font-family: var(--inter);
+  font-weight: var(--fw700);
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 1.6rem;
+}
+
+.insights-text {
+  color: var(--softViolet);
+}
+
+.paragraph-text {
+  font-family: var(--inter);
+  font-weight: var(--fw400);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  color: var(--white);
+  opacity: 0.75;
+  margin-bottom: 4rem;
+}
+
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stats-header {
+  font-family: var(--inter);
+  font-weight: var(--fw700);
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.stats-name {
+  font-family: var(--lexendDeca);
+  font-weight: var(--fw400);
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  color: var(--white);
+  opacity: 0.6;
+}
+
+/********** DESKTOP MEDIA QUERY **********/
+
+/********** 1440px **********/
+@media (min-width: 90em) {
+  /********** CARD COMPONENT **********/
+  .card-container {
+    display: grid;
+    max-width: 111rem;
+    grid-template-columns: 57rem 54rem;
+  }
+
+  .header-img {
+    height: 100%;
+  }
+
+  .main-img-container {
+    grid-column: 2/-1;
+  }
+
+  .text-container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 7.1rem 9.5rem 5.9rem 7.2rem;
+  }
+
+  .header-text {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .paragraph-text {
+    max-width: 37.4rem;
+    margin-bottom: 7.2rem;
+  }
+
+  .analytics-container {
+    flex-direction: row;
+    gap: 6.3rem;
+  }
+
+  .header-text,
+  .paragraph-text,
+  .stats-header,
+  .stats-name {
+    text-align: left;
+  }
+}
